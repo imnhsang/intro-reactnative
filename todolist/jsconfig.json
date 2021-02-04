@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react-native",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "baseUrl": ".",
+    /* Base directory to resolve non-absolute module names. */
+    "paths": {
+      "#appRoot": ["./*"],
+      "#assets/*": ["./src/assets/*"],
+      "#redux/*": ["./src/redux/*"],
+      "#components/*": ["./src/components/*"],
+      "#core/*": ["./src/core/*"],
+      "#services/*": ["./src/services/*"],
+      "#utils/*": ["./src/utils/*"],
+      "#global/*": ["./src/global/*"],
+      "#translations/*": ["./translations/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
