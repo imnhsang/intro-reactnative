@@ -3,15 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "init-android": "adb -d reverse tcp:8081 tcp:8081",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios-ip8": "react-native run-ios  --simulator='iPhone 8'",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint *.js **/*.js src/**/*.js"
   },
   "dependencies": {
     "react": "16.13.1",
-    "react-native": "0.63.4"
+    "react-native": "0.63.4",
+    "react-native-svg": "^12.1.0",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
@@ -20,11 +26,24 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.19.0",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.8",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
     "metro-react-native-babel-preset": "^0.65.0",
     "react-test-renderer": "16.13.1"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint . --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

@@ -12,6 +12,7 @@
       "#appRoot": ["./*"],
       "#assets/*": ["./src/assets/*"],
       "#redux/*": ["./src/redux/*"],
+      "#screens/*": ["./src/screens/*"],
       "#components/*": ["./src/components/*"],
       "#core/*": ["./src/core/*"],
       "#services/*": ["./src/services/*"],

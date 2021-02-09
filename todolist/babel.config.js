@@ -14,6 +14,7 @@ module.exports = {
         alias: {
           '#appRoot': './',
           '#assets': './src/assets',
+          '#screens': './src/screens',
           '#components': './src/components',
           '#core': './src/core',
           '#services': './src/services',
@@ -24,4 +25,4 @@ module.exports = {
       },
     ],
   ],
-};
+}

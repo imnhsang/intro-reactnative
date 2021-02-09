@@ -1,16 +1,29 @@
-import * as React from 'react';
+import * as React from 'react'
+import {SafeAreaView, StyleSheet} from 'react-native'
+import {Provider} from 'react-redux'
 
-import {SafeAreaView} from 'react-native';
-import PasswordInput from '#components/Input/PasswordInput'
+import Tasks from '#screens/Tasks'
 
-const App: () => React$Node = () => {
+import COLORS from '#utils/theme/colors'
+import configureStore from './configureStore'
+
+const {store} = configureStore()
+
+const App = () => {
   return (
-    <>
-      <SafeAreaView>
-        <PasswordInput/>
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <Tasks />
       </SafeAreaView>
-    </>
-  );
-};
+    </Provider>
+  )
+}
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.snow,
+  },
+})
+
+export default App
